@@ -21,6 +21,7 @@ export interface CarData {
   model: string;
   transmission: 'm' | 'a';
   year: number;
+  error?: string;
 }
 
 type CarCardProps = {
