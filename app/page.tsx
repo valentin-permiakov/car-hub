@@ -2,7 +2,7 @@ import CarCatalogue from '@/components/CarCatalogue';
 import Hero from '@/components/Hero';
 import fetchCars from '@/utils/fetchCars';
 
-interface SearchParams {
+export interface SearchParams {
   [key: string]: string;
 }
 
@@ -14,7 +14,7 @@ export default async function Home({
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || '',
     year: searchParams.year || '2022',
-    fuel: searchParams.fuel || '',
+    fuel: searchParams.fuel_type || '',
     limit: searchParams.limit || '10',
     model: searchParams.model || '',
   });
@@ -26,6 +26,7 @@ export default async function Home({
       <CarCatalogue
         allCars={allCars}
         isDataEmpty={isDataEmpty}
+        searchParams={searchParams}
       />
     </main>
   );

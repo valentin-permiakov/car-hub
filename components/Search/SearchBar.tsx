@@ -28,12 +28,14 @@ const SearchBar: React.FC<SearchBarProps> = () => {
 
     if (model) {
       searchParams.set('model', model);
+      searchParams.set('limit', '10');
     } else {
       searchParams.delete('model');
     }
 
     if (manufacturer) {
       searchParams.set('manufacturer', manufacturer);
+      searchParams.set('limit', '10');
     } else {
       searchParams.delete('manufacturer');
     }
